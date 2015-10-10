@@ -54,6 +54,7 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
         configPlatforms(this);
         setShareContent(this);
+        UmengUpdateAgent.setDeltaUpdate(true);
         UmengUpdateAgent.update(this);
     }
 
@@ -99,10 +100,12 @@ public class MainActivity extends BaseActivity {
     private void addWXPlatform(Context context) {
         // 注意：在微信授权的时候，必须传递appSecret
         // wx967daebe835fbeac是你在微信开发平台注册应用的AppID, 这里需要替换成你注册的AppID
-        String appId = "wx967daebe835fbeac";
-        String appSecret = "5bb696d9ccd75a38c8a0bfe0675559b3";
+        String appId = "wx1e79806e9512c75f";
+        String appSecret = "4db435655e8509312c75e2e78fdc34fd";
+        String md5 = "5ABC4B9DAABA697FCECCCA332A061BB3";
         // 添加微信平台
         UMWXHandler wxHandler = new UMWXHandler(context, appId, appSecret);
+        wxHandler.showCompressToast(false);
         wxHandler.addToSocialSDK();
 
         // 支持微信朋友圈
@@ -157,7 +160,7 @@ public class MainActivity extends BaseActivity {
 
         UMImage localImage = new UMImage(activity, R.mipmap.ic_launcher);
         UMImage urlImage = new UMImage(activity,
-                "http://www.umeng.com/images/pic/social/integrated_3.png");
+                "http://www.baidu.com/img/bdlogo.png");
         // UMImage resImage = new UMImage(getActivity(), R.drawable.icon);
 
         // 视频分享
