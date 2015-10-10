@@ -1,25 +1,35 @@
-.classpath
+# Eclipse
 .project
+.classpath
 .settings
-eclipsebin
+.checkstyle
 
-bin
-gen
-build
-out
-lib
-
+# IntelliJ IDEA
 .idea
 *.iml
+*.ipr
+*.iws
 classes
-
-obj
-
-.DS_Store
+gen-external-apklibs
 
 # Gradle
 .gradle
-jniLibs
 build
+
+# Maven
+target
+release.properties
+pom.xml.*
+
+# Ant
+bin
+gen
+build.xml
+ant.properties
 local.properties
-reports
+proguard.cfg
+proguard-project.txt
+
+# Other
+.DS_Store
+tmp
