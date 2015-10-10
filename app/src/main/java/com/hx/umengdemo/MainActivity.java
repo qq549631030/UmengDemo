@@ -119,8 +119,8 @@ public class MainActivity extends BaseActivity {
      * : 用户点击该分享时跳转到的目标地址 [必填] ( 若不填写则默认设置为友盟主页 )
      */
     private void addQQQZonePlatform(Activity activity) {
-        String appId = "100424468";
-        String appKey = "c7394704798a158208a74ab60104f0ba";
+        String appId = "1104900006";
+        String appKey = "doOw3jEiWiIS4PkW";
         // 添加QQ支持, 并且设置QQ分享内容的target url
         UMQQSsoHandler qqSsoHandler = new UMQQSsoHandler(activity,
                 appId, appKey);
@@ -143,7 +143,7 @@ public class MainActivity extends BaseActivity {
         mController.getConfig().setSsoHandler(new TencentWBSsoHandler());
 
         QZoneSsoHandler qZoneSsoHandler = new QZoneSsoHandler(activity,
-                "100424468", "c7394704798a158208a74ab60104f0ba");
+                "1104900006", "doOw3jEiWiIS4PkW");
         qZoneSsoHandler.addToSocialSDK();
         mController.setShareContent("友盟社会化组件（SDK）让移动应用快速整合社交分享功能。http://www.umeng.com/social");
 
