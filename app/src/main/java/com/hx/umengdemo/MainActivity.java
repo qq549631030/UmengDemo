@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.umeng.onlineconfig.OnlineConfigAgent;
 import com.umeng.socialize.controller.UMServiceFactory;
 import com.umeng.socialize.controller.UMSocialService;
 import com.umeng.socialize.laiwang.media.LWDynamicShareContent;
@@ -40,7 +42,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity {
-
+    private static final String TAG = "MainActivity";
     private final UMSocialService mController = UMServiceFactory
             .getUMSocialService("com.umeng.share");
 
@@ -54,8 +56,12 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
         configPlatforms(this);
         setShareContent(this);
-        UmengUpdateAgent.setDeltaUpdate(true);
         UmengUpdateAgent.update(this);
+
+        OnlineConfigAgent.getInstance().setDebugMode(true);
+        OnlineConfigAgent.getInstance().updateOnlineConfig(this);
+        String test = OnlineConfigAgent.getInstance().getConfigParams(this,"test");
+        Log.d(TAG,"test = "+test);
     }
 
     @OnClick({R.id.share})
