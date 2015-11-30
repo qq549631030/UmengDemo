@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.umeng.onlineconfig.OnlineConfigAgent;
+import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.umeng.socialize.controller.UMServiceFactory;
 import com.umeng.socialize.controller.UMSocialService;
 import com.umeng.socialize.laiwang.media.LWDynamicShareContent;
@@ -308,5 +309,7 @@ public class MainActivity extends BaseActivity {
         lwDynamicShareContent.setTargetUrl("http://www.umeng.com/social");
         mController.setShareMedia(lwDynamicShareContent);
 
+        //调整分享图标顺序
+        mController.getConfig().setPlatformOrder(SHARE_MEDIA.QQ,SHARE_MEDIA.QZONE,SHARE_MEDIA.WEIXIN,SHARE_MEDIA.WEIXIN_CIRCLE,SHARE_MEDIA.SINA,SHARE_MEDIA.TENCENT);
     }
 }
